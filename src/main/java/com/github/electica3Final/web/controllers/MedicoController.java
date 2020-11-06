@@ -2,13 +2,15 @@ package com.github.electica3Final.web.controllers;
 
 import com.github.electica3Final.dto.MedicoDTO;
 import com.github.electica3Final.service.MedicoService;
+import com.github.electica3Final.web.response.ListResponseDTO;
 import com.github.electica3Final.web.response.ObjectResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+
+import java.util.List;
 
 /**
  * MEDICO ENDPOINTS
@@ -21,8 +23,13 @@ public class MedicoController extends BaseRestController {
     private MedicoService medicoService;
 
     @PostMapping("/save")
-    public ResponseEntity<ObjectResponseDTO<MedicoDTO>> saveProject(@RequestBody MedicoDTO medico) {
+    public ResponseEntity<ObjectResponseDTO> saveProject(@RequestBody MedicoDTO medico) {
         return ResponseEntity.ok(ObjectResponseDTO.success(medicoService.saveMedico(medico)));
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<ListResponseDTO<MedicoDTO>> getAllMedicos() {
+        return ResponseEntity.ok(ListResponseDTO.success(medicoService.getAllMedicos()));
     }
 
 
