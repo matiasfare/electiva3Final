@@ -11,5 +11,5 @@ public class PacienteDTO {
     private long id;
     private String nombre;
     private String apellido;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
 }
