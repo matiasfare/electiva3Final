@@ -10,8 +10,8 @@ create table medico (
                         nombre varchar(255),
                         apellido varchar(255),
                         fecha_nacimiento date,
-                        ciudad varchar(25) unique,
-                        telefono varchar(50) unique
+                        ciudad varchar(25),
+                        telefono varchar(50)
 );
 
 create table hospital (
