@@ -1,23 +1,32 @@
 package com.github.electica3Final.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "hospital", schema = "public")
+@Getter
+@Setter
 public class Hospital {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "cod_hospital")
+    private Long codHospital;
 
     @Column(name = "nombre")
-    private Long nombre;
+    private String nombre;
 
-    @Column(name = "apellido")
-    private String apellido;
+    @Column(name = "ciudad")
+    private String ciudad;
 
-    @Column(name = "fecha_nacimiento", updatable = false)
-    private Date fechaNacimiento;
+    @Column(name = "telefono")
+    private String telefono;
 
+    @Column(name = "id_director")
+    private Long idDirector;
+
+    @Column(name = "descripcion")
+    private String descripcion;
 }

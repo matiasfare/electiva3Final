@@ -7,6 +7,8 @@ import com.github.electica3Final.service.MedicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MedicoServiceImpl implements MedicoService {
 
@@ -25,5 +27,10 @@ public class MedicoServiceImpl implements MedicoService {
     public MedicoDTO getById(Long id){
         return mapper.mapToDto(medicoRepository.findById(id));
     }
+
+    public List<MedicoDTO> getAllMedicos() {
+        return mapper.mapAsList(medicoRepository.findAll());
+    }
+
 
 }
