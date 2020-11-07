@@ -1,0 +1,671 @@
+{
+	"info": {
+		"_postman_id": "cdc1a31b-1e8d-400f-88d1-c01df04e9924",
+		"name": "FinalElectiva3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "savePaciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5719493,\n    \"nombre\": \"Matias\",\n    \"apellido\": \"Fare Cabañas\",\n    \"fechaNacimiento\": \"1997/02/12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/paciente/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "saveMedico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5719494,\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Fare Cabañas\",\n    \"fechaNacimiento\": \"1997/02/12\",\n    \"ciudad\": \"Ñemby\",\n    \"telefono\": \"0981123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Medicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medico",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5719493",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "saveHospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":5,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllHospital",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Servicios",
+			"item": [
+				{
+					"name": "saveServicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"psicologia niños\",\n    \"descripcion\": \"urologo\",\n    \"camasDisponibles\": 0,\n    \"camasOcupadas\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicio/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicio",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllServicios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicio"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "HospitalMedico",
+			"item": [
+				{
+					"name": "saveHospitalMedico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idMedico\": 0,\n    \"idHospital\": 123,\n    \"recideHospital\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital-medico/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital-medico",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllHospitalMedico",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital-medico",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital-medico"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "29f6d0e1-955e-4eee-b97f-72aceaee4578",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a5a927b-8d91-4227-9afb-f901ae75a623",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "HospitalServicio",
+			"item": [
+				{
+					"name": "saveHospitalServicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\": 123,\n    \"idServicio\": 5,\n    \"totalCamas\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital-servicio/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital-servicio",
+								"save"
+							]
+						},
+						"description": "Solo permite guardar una convinacion unica entre servicio y Hospital"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllHospitalServicio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital-servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital-servicio"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bb2c836e-413b-4d6f-95d6-83d77fc986f6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a679f164-7f76-44d9-aa53-f0e12b6fecdd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Camas",
+			"item": [
+				{
+					"name": "GetAllHospitalServicio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/hospital-servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospital-servicio"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ca0d9bf-a91d-427b-b3b3-c7b07971208d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8e57d7a-ef75-486c-bf5b-25b723c3fc74",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MedicoServicio",
+			"item": [
+				{
+					"name": "saveMedicoServicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idMedico\": 5719493,\n    \"idServicio\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico-servicio/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico-servicio",
+								"save"
+							]
+						},
+						"description": "Solo permite guardar una convinacion unica entre servicio y Medico"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMedicoServicio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medico-servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico-servicio"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c39f62af-97f7-406e-976b-58e356bd9184",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c9cc8d5-b677-4b96-abef-91ba65cc828e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ConsultaMedica",
+			"item": [
+				{
+					"name": "saveConsultaMedica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/consulta-medica/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consulta-medica",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllConsultaMedicas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico-servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico-servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetConsultaMedicasById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico-servicio",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico-servicio"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "763a6d40-d0c4-487b-9614-da6efee98f0f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc1d1ec5-5d13-48a9-90b3-5e4370f7d590",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GetDiagnostic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/diagnostic",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"diagnostic"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
