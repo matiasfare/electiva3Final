@@ -67,7 +67,7 @@ create table hospital_servicio (
                                    total_camas integer
 );
 
-CREATE UNIQUE INDEX id_hospital_servicio ON hospital_servicio (id_servicio, id_hospital);
+CREATE UNIQUE INDEX id_hospital_servicio ON hospital_servicio (id_servicio, cod_hospital);
 
 create table medico_servicio (
                                  id bigserial primary key,
