@@ -35,6 +35,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "savePaciente Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5719493,\n    \"nombre\": \"Matias\",\n    \"apellido\": \"Fare Cabañas\",\n    \"fechaNacimiento\": \"1997/02/12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/paciente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -420,13 +450,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/hospital-servicio",
+							"raw": "localhost:8080/hospital-servicio/servicio/5",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"hospital-servicio"
+								"hospital-servicio",
+								"servicio",
+								"5"
 							]
 						}
 					},
@@ -542,7 +574,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"raw": "{\n    \"paciente\": 5719493,\n    \"hospital\": 123,\n    \"medico\": 1,\n    \"fecha\": \"2016-11-09\",\n    \"diagnostico\": \"saludable\",\n    \"servicio\": 3,\n    \"reposo\": false,\n    \"altura\": 1.88,\n    \"peso\": 88.6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -581,13 +613,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/medico-servicio",
+							"raw": "localhost:8080/consulta-medica",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"medico-servicio"
+								"consulta-medica"
 							]
 						}
 					},
@@ -639,6 +671,92 @@
 					"listen": "test",
 					"script": {
 						"id": "dc1d1ec5-5d13-48a9-90b3-5e4370f7d590",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "HistoriaClinica",
+			"item": [
+				{
+					"name": "saveConsultaMedica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPaciente\": 5719493,\n    \"idConsulta\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/historia-clinica/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"historia-clinica",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllConsultaMedicas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codHospital\":124,\n    \"nombre\":\"San Juan\",\n    \"ciudad\":\"Asuncion\",\n    \"telefono\":\"0987654321\",\n    \"idDirector\": 5719493,\n    \"descripcion\": \"hospital muy lindo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/historia-clinica",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"historia-clinica"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7083f9f9-b21b-40db-9df1-15ba37f8356c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d8381d6-8b01-47bf-95a1-618a5cf5b5d2",
 						"type": "text/javascript",
 						"exec": [
 							""
