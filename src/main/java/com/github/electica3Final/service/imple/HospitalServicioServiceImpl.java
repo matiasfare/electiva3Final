@@ -1,12 +1,9 @@
 package com.github.electica3Final.service.imple;
 
 import com.github.electica3Final.dto.HospitalServicioDTO;
-import com.github.electica3Final.entities.Hospital;
 import com.github.electica3Final.entities.HospitalServicio;
 import com.github.electica3Final.mapper.impl.HospitalServicioMapper;
-import com.github.electica3Final.repository.HospitalRepository;
 import com.github.electica3Final.repository.HospitalServicioRepository;
-import com.github.electica3Final.service.HospitalService;
 import com.github.electica3Final.service.HospitalServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,11 +31,12 @@ public class HospitalServicioServiceImpl implements HospitalServicioService {
     }
 
     @Override
-    public int getCamasByServicio(Long idServicio) {
+    public String getCamasByServicio(Long idServicio) {
         int cont = 0;
-        for (HospitalServicio camas : hospitalServicioRepository.findByIdServicio(idServicio) )
+                List<HospitalServicio> Lista = hospitalServicioRepository.findByIdServicio(idServicio);
+        for (HospitalServicio camas : Lista )
             cont = cont + camas.getTotalCamas();
-        return cont;
+        return "El servicio cuenta con " + cont + " camas";
     }
 
 

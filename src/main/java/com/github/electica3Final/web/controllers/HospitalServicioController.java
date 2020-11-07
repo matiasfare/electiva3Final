@@ -35,7 +35,7 @@ public class HospitalServicioController extends BaseRestController {
         return ResponseEntity.ok(camasService.getCamasByHospital(codHospital));
     }
     @GetMapping("/servicio/{idServicio}")
-    public ResponseEntity<Integer> getCamasDisponiblesByIdServicio(@PathVariable Long idServicio) {
+    public ResponseEntity<String> getCamasDisponiblesByIdServicio(@PathVariable Long idServicio) {
         return ResponseEntity.ok(camasService.getCamasByServicio(idServicio));
     }
 

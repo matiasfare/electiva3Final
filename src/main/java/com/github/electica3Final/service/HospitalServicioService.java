@@ -8,7 +8,7 @@ public interface HospitalServicioService {
 
     int getCamasByHospital(Long codHospital);
 
-    int getCamasByServicio(Long idServicio);
+    String getCamasByServicio(Long idServicio);
 
     List<HospitalServicioDTO> getAll();
 
