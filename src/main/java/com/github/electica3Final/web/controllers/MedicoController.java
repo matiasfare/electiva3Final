@@ -27,7 +27,7 @@ public class MedicoController extends BaseRestController {
         return ResponseEntity.ok(ObjectResponseDTO.success(medicoService.saveMedico(medico)));
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<ListResponseDTO<MedicoDTO>> getAllMedicos() {
         return ResponseEntity.ok(ListResponseDTO.success(medicoService.getAllMedicos()));
     }
