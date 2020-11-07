@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public interface HospitalRepository extends JpaRepository<Hospital, HospitalDTO> {
 
-    Hospital findByCodHospital(Long codHospital);
+    Hospital findByCodHospital(String codHospital);
 
     List<Hospital> findAll();
 }

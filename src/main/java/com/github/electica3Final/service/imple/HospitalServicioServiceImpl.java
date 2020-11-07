@@ -1,8 +1,12 @@
 package com.github.electica3Final.service.imple;
 
 import com.github.electica3Final.dto.HospitalServicioDTO;
+import com.github.electica3Final.entities.Hospital;
+import com.github.electica3Final.entities.HospitalServicio;
 import com.github.electica3Final.mapper.impl.HospitalServicioMapper;
+import com.github.electica3Final.repository.HospitalRepository;
 import com.github.electica3Final.repository.HospitalServicioRepository;
+import com.github.electica3Final.service.HospitalService;
 import com.github.electica3Final.service.HospitalServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,20 +22,25 @@ public class HospitalServicioServiceImpl implements HospitalServicioService {
     @Autowired
     private HospitalServicioMapper mapper;
 
+
     @Override
-    public List<HospitalServicioDTO> getByidServicio(Long idServicio) {
-        return mapper.mapAsList(hospitalServicioRepository.findByIdServicio(idServicio));
+    public int getCamasByHospital(Long codHospital) {
+        //List<HospitalServicio> ListaCamas = hospitalServicioRepository.findByIdHospital(codHospital);
+        List<HospitalServicio> ListaCamas = null;
+        int cont = 0;
+        for (HospitalServicio camas : ListaCamas )
+            cont = cont + camas.getTotalCamas();
+        return cont;
     }
 
     @Override
-    public List<HospitalServicioDTO> getByIdHospital(Long idHospital) {
-        return mapper.mapAsList(hospitalServicioRepository.findByIdHospital(idHospital));
+    public int getCamasByServicio(Long idServicio) {
+        int cont = 0;
+        for (HospitalServicio camas : hospitalServicioRepository.findByIdServicio(idServicio) )
+            cont = cont + camas.getTotalCamas();
+        return cont;
     }
 
-    @Override
-    public List<HospitalServicioDTO> getByIdHospitalIdServicio(Long idHospital, Long idServicio) {
-        return mapper.mapAsList(hospitalServicioRepository.findByIdHospitalAndIdServicio(idHospital, idServicio));
-    }
 
     @Override
     public List<HospitalServicioDTO> getAll() {
@@ -42,5 +51,7 @@ public class HospitalServicioServiceImpl implements HospitalServicioService {
     public HospitalServicioDTO save(HospitalServicioDTO hospital) {
         return mapper.mapToDto(hospitalServicioRepository.save(mapper.mapToEntity(hospital)));
     }
+
+
 
 }

@@ -20,8 +20,8 @@ public class HospitalServicio {
     @Column(name = "id_servicio")
     private Long idServicio;
 
-    @Column(name = "id_hospital")
-    private Long idHospital;
+    @Column(name = "cod_hospital")
+    private Long codHospital;
 
     @Column(name = "total_camas")
     private Integer totalCamas;

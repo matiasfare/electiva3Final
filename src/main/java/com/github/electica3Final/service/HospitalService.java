@@ -11,14 +11,10 @@ public interface HospitalService {
      * @return
      */
     HospitalDTO saveHospital(HospitalDTO hospital);
-    
 
-    /**
-     * Encontrar medico por id
-     * @param codHospital
-     * @return
-     */
-    HospitalDTO getByCodHospital(Long codHospital);
+    HospitalDTO getByCodHospital(HospitalDTO codHospital);
+
+    HospitalDTO getByCodHospital(String codHospital);
 
     /**
      * Encontrar medico por id

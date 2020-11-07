@@ -8,7 +8,7 @@ import lombok.Setter;
 public class HospitalServicioDTO {
 
     private Long id;
-    private Long idHospital;
+    private Long codHospital;
     private Long idServicio;
     private Integer totalCamas;
 

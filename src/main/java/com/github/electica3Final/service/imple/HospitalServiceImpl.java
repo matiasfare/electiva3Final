@@ -2,6 +2,7 @@ package com.github.electica3Final.service.imple;
 
 import com.github.electica3Final.dto.HospitalDTO;
 import com.github.electica3Final.dto.MedicoDTO;
+import com.github.electica3Final.entities.Hospital;
 import com.github.electica3Final.mapper.impl.HospitalMapper;
 import com.github.electica3Final.repository.HospitalRepository;
 import com.github.electica3Final.service.HospitalService;
@@ -25,7 +26,13 @@ public class HospitalServiceImpl implements HospitalService {
     }
 
     @Override
-    public HospitalDTO getByCodHospital(Long codHospital){
+    public HospitalDTO getByCodHospital(HospitalDTO codHospital) {
+        Hospital hospital = mapper.mapToEntity(codHospital);
+        return mapper.mapToDto(hospitalRepository.save(hospital));
+    }
+
+    @Override
+    public HospitalDTO getByCodHospital(String codHospital) {
         return mapper.mapToDto(hospitalRepository.findByCodHospital(codHospital));
     }
 

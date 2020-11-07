@@ -1,5 +1,6 @@
 package com.github.electica3Final.repository;
 
+import com.github.electica3Final.dto.HospitalDTO;
 import com.github.electica3Final.dto.HospitalServicioDTO;
 import com.github.electica3Final.entities.HospitalServicio;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,10 +14,6 @@ public interface HospitalServicioRepository extends JpaRepository<HospitalServic
     HospitalServicio findById(Long id);
 
     List<HospitalServicio> findAll();
-
-    List<HospitalServicio> findByIdHospital(Long idHospital);
-
-    List<HospitalServicio> findByIdHospitalAndIdServicio(Long idHospital, Long idServicio);
 
     List<HospitalServicio> findByIdServicio(Long idServicio);
 }

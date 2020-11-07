@@ -6,11 +6,9 @@ import java.util.List;
 
 public interface HospitalServicioService {
 
-    List<HospitalServicioDTO> getByidServicio(Long idServicio);
+    int getCamasByHospital(Long codHospital);
 
-    List<HospitalServicioDTO> getByIdHospital(Long idHospital);
-
-    List<HospitalServicioDTO> getByIdHospitalIdServicio(Long idHospital, Long idServicio);
+    int getCamasByServicio(Long idServicio);
 
     List<HospitalServicioDTO> getAll();
 
