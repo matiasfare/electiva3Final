@@ -27,7 +27,6 @@ create table servicio (
                           id bigserial primary key,
                           nombre  varchar(50),
                           descripcion varchar(250),
-                          total_camas integer,
                           camas_disponibles integer,
                           camas_ocupadas integer
 );
@@ -64,7 +63,8 @@ CREATE UNIQUE INDEX id_medico_hospital ON hospital_medico (id_medico, id_hospita
 create table hospital_servicio (
                                    id bigserial primary key,
                                    id_hospital bigint references hospital(cod_hospital),
-                                   id_servicio bigint references servicio(id)
+                                   id_servicio bigint references servicio(id),
+                                   total_camas integer
 );
 
 CREATE UNIQUE INDEX id_hospital_servicio ON hospital_servicio (id_servicio, id_hospital);
