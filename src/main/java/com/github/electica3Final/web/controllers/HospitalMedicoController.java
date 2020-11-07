@@ -1,6 +1,9 @@
 package com.github.electica3Final.web.controllers;
 
 import com.github.electica3Final.dto.HospitalDTO;
+import com.github.electica3Final.dto.HospitalMedicoDTO;
+import com.github.electica3Final.entities.HospitalMedico;
+import com.github.electica3Final.service.HospitalMedicoService;
 import com.github.electica3Final.service.HospitalService;
 import com.github.electica3Final.web.response.ListResponseDTO;
 import com.github.electica3Final.web.response.ObjectResponseDTO;
@@ -16,20 +19,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * HOSPITAL ENDPOINTS
  */
 @Controller
-@RequestMapping("/hospital")
-public class HospitalController extends BaseRestController {
+@RequestMapping("/hospital-medico")
+public class HospitalMedicoController extends BaseRestController {
 
     @Autowired
-    private HospitalService hospitalService;
+    private HospitalMedicoService Service;
 
     @PostMapping("/save")
-    public ResponseEntity<ObjectResponseDTO> saveProject(@RequestBody HospitalDTO hospital) {
-        return ResponseEntity.ok(ObjectResponseDTO.success(hospitalService.saveHospital(hospital)));
+    public ResponseEntity<ObjectResponseDTO> saveProject(@RequestBody HospitalMedicoDTO hospitalMedico) {
+        return ResponseEntity.ok(ObjectResponseDTO.success(Service.save(hospitalMedico)));
     }
 
     @GetMapping("")
-    public ResponseEntity<ListResponseDTO<HospitalDTO>> getAllHospitals() {
-        return ResponseEntity.ok(ListResponseDTO.success(hospitalService.getAllHospital()));
+    public ResponseEntity<ListResponseDTO<HospitalDTO>> getAllHospitalMedicos() {
+        return ResponseEntity.ok(ListResponseDTO.success(Service.getAll()));
     }
 
 

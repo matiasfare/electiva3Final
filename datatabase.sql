@@ -51,25 +51,30 @@ create table hitoria_clinica (
     id bigserial primary key,
     id_paciente bigserial references paciente(id),
     id_consuta bigserial references consulta_medica(id)
-
-
 );
 
 create table hospital_medico (
+                                 id bigserial primary key,
                                  id_medico bigint references medico(id),
                                  id_hospital bigint references hospital(cod_hospital),
-                                 PRIMARY KEY (id_hospital,id_medico),
                                  recide_hospital boolean
 );
 
+CREATE UNIQUE INDEX id_medico_hospital ON hospital_medico (id_medico, id_hospital);
+
 create table hospital_servicio (
+                                   id bigserial primary key,
                                    id_hospital bigint references hospital(cod_hospital),
-                                   id_servicio bigint references servicio(id),
-                                   PRIMARY KEY (id_hospital,id_servicio)
+                                   id_servicio bigint references servicio(id)
 );
 
+CREATE UNIQUE INDEX id_hospital_servicio ON hospital_servicio (id_servicio, id_hospital);
+
 create table medico_servicio (
+                                 id bigserial primary key,
                                  id_medico bigint references medico(id),
-                                 id_servicio bigint references servicio(id),
-                                 PRIMARY KEY (id_medico,id_servicio)
+                                 id_servicio bigint references servicio(id)
 );
+
+CREATE UNIQUE INDEX id_medico_servicio ON medico_servicio (id_medico, id_servicio);
+
