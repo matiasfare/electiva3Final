@@ -10,5 +10,6 @@ public class HospitalServicioDTO {
     private Long id;
     private Long idHospital;
     private Long idServicio;
+    private Integer totalCamas;
 
 }

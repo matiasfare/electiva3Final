@@ -23,9 +23,6 @@ public class Servicio {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "total_camas")
-    private Integer totalCamas;
-
     @Column(name = "camas_disponibles")
     private Integer camasDisponibles;
 

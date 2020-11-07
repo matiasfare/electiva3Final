@@ -22,4 +22,7 @@ public class HospitalServicio {
 
     @Column(name = "id_hospital")
     private Long idHospital;
+
+    @Column(name = "total_camas")
+    private Integer totalCamas;
 }
