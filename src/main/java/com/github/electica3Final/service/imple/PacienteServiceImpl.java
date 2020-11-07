@@ -1,5 +1,6 @@
 package com.github.electica3Final.service.imple;
 
+import com.github.electica3Final.dto.MedicoServicioDTO;
 import com.github.electica3Final.dto.PacienteDTO;
 import com.github.electica3Final.repository.PacienteRepository;
 import com.github.electica3Final.mapper.impl.PacienteMapper;
@@ -26,6 +27,11 @@ public class PacienteServiceImpl implements PacienteService {
     @Override
     public PacienteDTO getById(Long id){
         return mapper.mapToDto(pacienteRepository.findById(id));
+    }
+
+    @Override
+    public List<PacienteDTO> getAll() {
+        return mapper.mapAsList(pacienteRepository.findAll());
     }
 
 }

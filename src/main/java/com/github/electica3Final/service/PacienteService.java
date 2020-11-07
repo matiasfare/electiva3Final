@@ -1,5 +1,6 @@
 package com.github.electica3Final.service;
 
+import com.github.electica3Final.dto.MedicoServicioDTO;
 import com.github.electica3Final.dto.PacienteDTO;
 
 import java.util.List;
@@ -22,5 +23,7 @@ public interface PacienteService {
      * @return
      */
     PacienteDTO getById(Long id);
+
+    List<PacienteDTO> getAll();
 
 }

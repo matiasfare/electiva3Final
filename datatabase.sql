@@ -47,8 +47,8 @@ create table consulta_medica (
 
 create table hitoria_clinica (
     id bigserial primary key,
-    id_paciente bigserial references paciente(id),
-    id_consuta bigserial references consulta_medica(id)
+    id_paciente bigint references paciente(id),
+    id_consulta bigint references consulta_medica(id)
 );
 
 create table hospital_medico (
