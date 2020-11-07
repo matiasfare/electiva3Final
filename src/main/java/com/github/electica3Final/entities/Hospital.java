@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Hospital {
 
     @Id
-    @Column(name = "cod_hospital")
+    @Column(name = "cod_hospital", unique = true)
     private Long codHospital;
 
     @Column(name = "nombre")
