@@ -26,7 +26,10 @@ create table hospital (
 create table servicio (
                           id bigserial primary key,
                           nombre  varchar(50),
-                          descripcion varchar(25)
+                          descripcion varchar(250),
+                          total_camas integer,
+                          camas_disponibles integer,
+                          camas_ocupadas integer
 );
 
 create table consulta_medica (
@@ -42,6 +45,14 @@ create table consulta_medica (
                                  edad integer,
                                  altura double precision,
                                  peso double precision
+);
+
+create table hitoria_clinica (
+    id bigserial primary key,
+    id_paciente bigserial references paciente(id),
+    id_consuta bigserial references consulta_medica(id)
+
+
 );
 
 create table hospital_medico (
